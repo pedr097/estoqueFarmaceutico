@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 @Component({
   selector: 'app-menu',
@@ -30,7 +31,9 @@ export class MenuPage implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(private statusBar: StatusBar) { 
+    this.statusBar.backgroundColorByHexString('#3980FE');
+  }
 
   ngOnInit() {
   }
