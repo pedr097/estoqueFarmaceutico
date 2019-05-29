@@ -26,7 +26,7 @@ export class MenuPage implements OnInit {
           title: 'Materia Prima',
           url: '/menu/materia-prima',
           icon: 'logo-google'
-        },
+        }
       ]
     }
   ];
