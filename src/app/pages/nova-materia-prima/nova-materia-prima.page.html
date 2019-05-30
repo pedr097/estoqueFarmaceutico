@@ -26,8 +26,8 @@
 
 <ion-footer>
     <ion-row no-padding text-center>
-        <ion-col size="6" *ngIf="materiaPrima.descricao && materiaPrima.nome">
-            <ion-toolbar color="success">
+        <ion-col size="6">
+            <ion-toolbar color="success" *ngIf="materiaPrima.descricao && materiaPrima.nome">
                 <ion-button expand="full" fill="clear" color="light" (click)="salvar();">
                   <ion-icon name="save" slot="start"></ion-icon>
                   Adicionar
@@ -36,8 +36,8 @@
         </ion-col>
         <ion-col size="6">
             <ion-toolbar>
-                <ion-button expand="full" fill="clear" color="danger">
-                    <ion-icon name="trash" slot="start" [routerLink]="/menu/materia-prima"></ion-icon>
+                <ion-button expand="full" fill="clear" color="danger" routerLink="/menu/materia-prima" routerDirection="root" routerLinkActive="active">
+                    <ion-icon name="trash" slot="start" routerLink="/menu/materia-prima" routerDirection="root" routerLinkActive="active"></ion-icon>
                     Cancelar
                 </ion-button>
             </ion-toolbar>
