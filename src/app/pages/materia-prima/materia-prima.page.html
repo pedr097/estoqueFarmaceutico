@@ -8,12 +8,21 @@
 </ion-header>
  
 <ion-content padding>
+    <tr *ngFor="let item of (materiaprimaList | async) ">  
+        <ion-card>
+            <ion-card-header>
+              <ion-card-subtitle><b>Nome:</b>  {{item.nome}} </ion-card-subtitle>
+              <ion-card-subtitle><b>Descrição:</b>  {{item.descricao}} </ion-card-subtitle>
+            </ion-card-header>
+        </ion-card>
+    </tr>
+</ion-content>
 
-  <!-- fab placed to the (vertical) center and end -->
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+<ion-footer>
+   <!-- fab placed to the (vertical) center and end -->
+   <ion-fab vertical="bottom" horizontal="end" slot="fixed" routerLink="/menu/nova-materia-prima" routerDirection="root" routerLinkActive="active">
       <ion-fab-button>
         <ion-icon name="add" routerLink="/menu/nova-materia-prima" routerDirection="root" routerLinkActive="active"></ion-icon>
       </ion-fab-button>
   </ion-fab>
- 
-</ion-content>
+</ion-footer>

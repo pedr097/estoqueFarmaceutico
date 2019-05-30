@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { MateriaPrima } from 'src/app/interface/materia-prima';
+import { MateriaPrimaService } from 'src/app/services/materia-prima.service';
 
 @Component({
   selector: 'app-materia-prima',
@@ -7,7 +10,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MateriaPrimaPage implements OnInit {
 
-  constructor() { }
+  materiaprimaList: Observable<MateriaPrima[]>;
+  constructor( private materiaService: MateriaPrimaService) {
+    this.materiaprimaList = this.materiaService.getMateriasPrima();
+   }
 
   ngOnInit() {
   }
