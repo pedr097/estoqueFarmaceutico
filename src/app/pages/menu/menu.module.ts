@@ -33,6 +33,10 @@ const routes: Routes = [
       {
         path: 'nova-materia-prima',
         loadChildren: '../nova-materia-prima/nova-materia-prima.module#NovaMateriaPrimaPageModule'
+      },
+      {
+        path: 'novo-produto',
+        loadChildren: '../novo-produto/novo-produto.module#NovoProdutoPageModule'
       }
     ]
   }
