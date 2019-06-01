@@ -14,6 +14,10 @@
             <ion-card-subtitle><b>Nome:</b>  {{item.nome}} </ion-card-subtitle>
             <ion-card-subtitle><b>Descrição:</b>  {{item.descricao}} </ion-card-subtitle>
           </ion-card-header>
+          <ion-card-content>
+              <tr><b>Materias Primas:</b> </tr>
+              <tr *ngFor="let materiaprima of ( item.materiasprimas)"><b> ---> Nome:</b> {{materiaprima.nome}}</tr>
+          </ion-card-content>
       </ion-card>
   </tr>
 </ion-content>

@@ -21,7 +21,6 @@ export class ProdutoService {
           return action.map( a => {
             const data = a.payload.doc.data();
             const id = a.payload.doc.id;
-            console.log(data);
             return { id, ...data};
           })
         })

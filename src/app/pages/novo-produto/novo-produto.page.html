@@ -18,7 +18,7 @@
         </ion-item>
         <ion-item>
           <ion-label>Materias Primas</ion-label>
-          <ion-select multiple="true">
+          <ion-select multiple="true" [(ngModel)]="produto.materiasprimas">
             <ion-select-option *ngFor="let item of (materiaprimaList | async) " [value]="item" selected>{{item.nome}}</ion-select-option>
           </ion-select>
         </ion-item>
@@ -30,7 +30,7 @@
 <ion-footer>
     <ion-row no-padding text-center>
         <ion-col size="6">
-            <ion-toolbar color="success" *ngIf="produto.descricao && produto.nome">
+            <ion-toolbar color="success" *ngIf="produto.descricao && produto.nome && produto.materiasprimas.length > 0">
                 <ion-button expand="full" fill="clear" color="light" (click)="salvar();">
                   <ion-icon name="save" slot="start"></ion-icon>
                   Adicionar

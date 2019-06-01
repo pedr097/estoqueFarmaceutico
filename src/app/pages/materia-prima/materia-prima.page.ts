@@ -13,6 +13,7 @@ export class MateriaPrimaPage implements OnInit {
   materiaprimaList: Observable<MateriaPrima[]>;
   constructor( private materiaService: MateriaPrimaService) {
     this.materiaprimaList = this.materiaService.getMateriasPrima();
+    
    }
 
   ngOnInit() {

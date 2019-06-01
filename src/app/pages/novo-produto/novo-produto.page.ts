@@ -24,7 +24,7 @@ export class NovoProdutoPage implements OnInit {
 
     this.produto = {} as Produto;
     this.produto.materiasprimas = {} as MateriaPrima[];
-    
+
     this.materiaprimaList = this.materiaService.getMateriasPrima();
 
   }
@@ -33,10 +33,6 @@ export class NovoProdutoPage implements OnInit {
   }
 
   salvar(){
-
-    console.log(this.produto);
-    return;
-
     this.produtoService.addProduto(this.produto).then(
       res => { this.salvou(); }
     )
