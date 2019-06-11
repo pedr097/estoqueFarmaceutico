@@ -16,6 +16,12 @@
             <ion-label>Descrição:</ion-label>
             <ion-input expand="block" [(ngModel)]="produto.descricao"></ion-input>
         </ion-item>
+
+        <ion-item>
+            <ion-label>Data Vencimento</ion-label>
+            <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="produto.data"></ion-datetime>
+          </ion-item>
+
         <ion-item>
           <ion-label>Materias Primas</ion-label>
           <ion-select multiple="true" [(ngModel)]="produto.materiasprimas">

@@ -23,6 +23,7 @@ export class NovoProdutoPage implements OnInit {
               private router: Router) {
 
     this.produto = {} as Produto;
+    this.produto.data
     this.produto.materiasprimas = {} as MateriaPrima[];
 
     this.materiaprimaList = this.materiaService.getMateriasPrima();
