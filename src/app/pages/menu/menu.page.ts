@@ -20,12 +20,12 @@ export class MenuPage implements OnInit {
         {
           title: 'Produto',
           url: '/menu/produto',
-          icon: 'logo-ionic'
+          icon: 'medkit'
         },
         {
           title: 'Materia Prima',
           url: '/menu/materia-prima',
-          icon: 'logo-google'
+          icon: 'flask'
         }
       ]
     }

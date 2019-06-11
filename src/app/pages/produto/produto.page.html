@@ -3,24 +3,37 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Produto</ion-title>
+    <ion-title>Produtos</ion-title>
   </ion-toolbar>
 </ion-header>
  
 <ion-content padding>
-  <tr *ngFor="let item of ( produtoList | async)">
-      <ion-card>
-          <ion-card-header>
-            <ion-card-subtitle><b>Nome:</b>  {{item.nome}} </ion-card-subtitle>
-            <ion-card-subtitle><b>Descrição:</b>  {{item.descricao}} </ion-card-subtitle>
-            <ion-card-subtitle><b>Data:</b>  {{item.data | date: 'dd/MM/yyyy'}} </ion-card-subtitle>
-          </ion-card-header>
-          <ion-card-content>
-              <tr><b>Materias Primas:</b> </tr>
-              <tr *ngFor="let materiaprima of ( item.materiasprimas)"><b> ---> Nome:</b> {{materiaprima.nome}}</tr>
-          </ion-card-content>
-      </ion-card>
-  </tr>
+  
+      
+      
+      
+
+      <ion-card *ngFor="let item of ( produtoList | async)">
+          <ion-item>
+            <ion-label> {{item.nome}}</ion-label> 
+            <ion-button slot="end"><ion-icon ios="ios-trash" md="md-trash"></ion-icon></ion-button>
+          </ion-item>
+
+          <ion-item>     
+            <ion-card-content>
+                <h6>Vencimento {{item.data | date: 'dd/MM/yyyy'}}</h6><br>
+                {{item.descricao}}
+            </ion-card-content>
+          </ion-item>
+          
+          <tr *ngFor="let materiaprima of (item.materiasprimas)">
+              <ion-item href="#" class="activated">
+                  <ion-icon name="flask" slot="start"></ion-icon>
+                  <ion-label>{{materiaprima.nome}}</ion-label>
+              </ion-item>
+          </tr>
+        </ion-card>
+  
 </ion-content>
 
 <ion-footer>
