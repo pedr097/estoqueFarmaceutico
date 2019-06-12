@@ -7,8 +7,26 @@
   </ion-toolbar>
 </ion-header>
 
- 
-<ion-content class="background-image" no-scroll padding>
-  
- 
+
+<!--<ion-content class="background-image" no-scroll padding>-->
+<ion-content>
+
+  <ion-card *ngFor="let item of ( produtoList )">
+    <ion-item>
+      <ion-label> {{item.nome}}</ion-label>
+      <ion-button slot="end">
+        <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+      </ion-button>
+    </ion-item>
+
+    <ion-item>
+      <ion-card-content>
+        <h6>Vencimento {{item.data | date: 'dd/MM/yyyy'}}</h6><br>
+        {{item.descricao}}
+      </ion-card-content>
+    </ion-item>
+
+  </ion-card>
+
+
 </ion-content>
