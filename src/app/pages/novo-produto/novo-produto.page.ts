@@ -35,16 +35,17 @@ export class NovoProdutoPage implements OnInit {
 
   salvar(){
     this.produtoService.addProduto(this.produto).then(
-      res => { this.salvou(); }
+      res => { this.salvou(res.id); }
     )
     .catch(
       err => { this.showToast("Erro ao salvar dados"); }
     );
   }
 
-  salvou(){
+  salvou(id: string){
     this.showToast("Salvo com sucesso.");
-    this.router.navigate(['/menu/produto']);
+    this.router.navigate(['/show-qrcode', id]);
+    //this.router.navigate(['/menu/produto']);
   }
 
   showToast(msg) {

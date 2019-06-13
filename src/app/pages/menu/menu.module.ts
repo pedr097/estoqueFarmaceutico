@@ -37,6 +37,10 @@ const routes: Routes = [
       {
         path: 'novo-produto',
         loadChildren: '../novo-produto/novo-produto.module#NovoProdutoPageModule'
+      },
+      {
+        path: 'leitura',
+        loadChildren: '../leitura/leitura.module#LeituraPageModule'
       }
     ]
   }

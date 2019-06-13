@@ -28,6 +28,11 @@ export class MenuPage implements OnInit {
           icon: 'flask'
         }
       ]
+    },
+    {
+      title: 'Leitura QRCode',
+      url: '/menu/leitura',
+      icon: 'qr-scanner'
     }
   ];
 

@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>QR Code Gerado</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="encodeData">
+      <ngx-qrcode [(qrc-value)]="encodeData"></ngx-qrcode>
+      <ion-card-content>
+          <!--<p>{{ encodeData }}</p>-->
+      </ion-card-content>
+  </ion-card>
+
+  <ion-button color="primary" routerLink="/menu/produto">
+    Voltar
+  </ion-button>
+</ion-content>

@@ -2,7 +2,7 @@ import { Injectable, Query } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Produto } from '../interface/produto';
 import { AngularFirestoreCollection, AngularFirestore, DocumentReference } from '@angular/fire/firestore';
-import { map } from 'rxjs/operators';
+import { map, take } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +30,17 @@ export class ProdutoService {
 
   getProdutos() : Observable<Produto[]>{
     return this.produtos;
+  }
+
+  getProdutoByID(id: string): Observable<Produto> {
+    return this.produtoCollection.doc<Produto>(id).valueChanges()
+    .pipe(
+      take(1),
+      map( produto =>{
+        produto.id = id;
+        return produto;
+      })
+    );
   }
 
   addProduto(produto: Produto): Promise<DocumentReference> {

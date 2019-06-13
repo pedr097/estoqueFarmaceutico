@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Leitura QRCode</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-list *ngIf="produto">
+  <ion-card>
+    <ion-item>
+      <ion-label> {{produto.nome}}</ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-card-content style="font-size: 10px">
+        <p style="font-size: 12px">{{produto.descricao}}</p>
+        <p style="font-size: 10px">Vence na data de {{produto.data | date: 'dd/MM/yyyy'}}</p>
+      </ion-card-content>
+    </ion-item>
+
+    <ion-item *ngFor="let materiaprima of (produto.materiasprimas)">
+      <ion-icon name="flask" slot="start" style="font-size: 14px"></ion-icon>
+      <ion-label style="font-size: 10px">{{materiaprima.nome}}</ion-label>
+    </ion-item>
+
+  </ion-card>
+</ion-list>
+</ion-content>

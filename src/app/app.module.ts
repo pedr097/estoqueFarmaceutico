@@ -11,13 +11,16 @@ import { environment} from '../environments/environment';
 
 import { AngularFirestore, FirestoreSettingsToken, AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import * as firebase from 'firebase';
 firebase.initializeApp(environment.firebase);
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+
+import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
+import { NgxQRCodeModule } from 'ngx-qrcode2';
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,12 +31,16 @@ import { AppRoutingModule } from './app-routing.module';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, AngularFireAuthModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
+    NgxQRCodeModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    { provide: FirestoreSettingsToken, useValue: {} },
+    BarcodeScanner
   ],
   bootstrap: [AppComponent]
 })

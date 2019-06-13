@@ -7,7 +7,11 @@ const routes: Routes = [
   { path: 'home', loadChildren: './pages/home/home.module#HomePageModule' },
   { path: 'produto', loadChildren: './pages/produto/produto.module#ProdutoPageModule' },
   { path: 'materia-prima', loadChildren: './pages/materia-prima/materia-prima.module#MateriaPrimaPageModule' },
-  { path: 'nova-materia-prima', loadChildren: './pages/nova-materia-prima/nova-materia-prima.module#NovaMateriaPrimaPageModule' },  { path: 'novo-produto', loadChildren: './pages/novo-produto/novo-produto.module#NovoProdutoPageModule' },
+  { path: 'nova-materia-prima', loadChildren: './pages/nova-materia-prima/nova-materia-prima.module#NovaMateriaPrimaPageModule' },
+  { path: 'novo-produto', loadChildren: './pages/novo-produto/novo-produto.module#NovoProdutoPageModule' },
+  { path: 'show-qrcode', loadChildren: './pages/show-qrcode/show-qrcode.module#ShowQrcodePageModule' },
+  { path: 'show-qrcode/:id', loadChildren: './pages/show-qrcode/show-qrcode.module#ShowQrcodePageModule' },  { path: 'leitura', loadChildren: './pages/leitura/leitura.module#LeituraPageModule' }
+
 
 ];
 
