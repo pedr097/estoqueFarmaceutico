@@ -6,37 +6,39 @@
     <ion-title>Produtos</ion-title>
   </ion-toolbar>
 </ion-header>
- 
-<ion-content padding>
-  
-      <ion-card *ngFor="let item of ( produtoList | async)">
-          <ion-item>
-            <ion-label> {{item.nome}}</ion-label> 
-            <ion-button slot="end" (click)="deleteProduto(item.id)"><ion-icon ios="ios-trash" md="md-trash"></ion-icon></ion-button>
-          </ion-item>
 
-          <ion-item>     
-            <ion-card-content>
-                <h6>Vencimento {{item.data | date: 'dd/MM/yyyy'}}</h6><br>
-                {{item.descricao}}
-            </ion-card-content>
-          </ion-item>
-          
-          <tr *ngFor="let materiaprima of (item.materiasprimas)">
-              <ion-item href="#" class="activated">
-                  <ion-icon name="flask" slot="start"></ion-icon>
-                  <ion-label>{{materiaprima.nome}}</ion-label>
-              </ion-item>
-          </tr>
-        </ion-card>
-  
+<ion-content padding>
+
+  <ion-card *ngFor="let item of ( produtoList | async)">
+    <ion-item>
+      <ion-label> {{item.nome}}</ion-label>
+      <ion-button slot="end" (click)="deleteProduto(item.id)">
+        <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+      </ion-button>
+    </ion-item>
+
+    <ion-item>
+      <ion-card-content style="font-size: 10px">
+        <p style="font-size: 12px">{{item.descricao}}</p>
+        <p style="font-size: 10px">Vence na data de {{item.data | date: 'dd/MM/yyyy'}}</p>
+      </ion-card-content>
+    </ion-item>
+
+    <ion-item *ngFor="let materiaprima of (item.materiasprimas)">
+      <ion-icon name="flask" slot="start" style="font-size: 14px"></ion-icon>
+      <ion-label style="font-size: 10px">{{materiaprima.nome}}</ion-label>
+    </ion-item>
+
+  </ion-card>
+
 </ion-content>
 
 <ion-footer>
-    <!-- fab placed to the (vertical) center and end -->
-    <ion-fab vertical="bottom" horizontal="end" slot="fixed" routerLink="/menu/novo-produto" routerDirection="root" routerLinkActive="active">
-       <ion-fab-button>
-         <ion-icon name="add" routerLink="/menu/novo-produto" routerDirection="root" routerLinkActive="active"></ion-icon>
-       </ion-fab-button>
-   </ion-fab>
- </ion-footer>
+  <!-- fab placed to the (vertical) center and end -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" routerLink="/menu/novo-produto" routerDirection="root"
+    routerLinkActive="active">
+    <ion-fab-button>
+      <ion-icon name="add" routerLink="/menu/novo-produto" routerDirection="root" routerLinkActive="active"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-footer>

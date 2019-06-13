@@ -1,11 +1,11 @@
 <ion-header>
     <ion-toolbar color="primary">
-      <ion-buttons slot="start">
-        <ion-menu-button></ion-menu-button>
-      </ion-buttons>
-      <ion-title>Nova Materia Prima</ion-title>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Nova Materia Prima</ion-title>
     </ion-toolbar>
-  </ion-header>
+</ion-header>
 
 <ion-content>
     <ion-list>
@@ -19,7 +19,7 @@
             <ion-label>Descrição:</ion-label>
             <ion-input expand="block" [(ngModel)]="materiaPrima.descricao"></ion-input>
         </ion-item>
-        
+
     </ion-list>
 </ion-content>
 
@@ -29,18 +29,20 @@
         <ion-col size="6">
             <ion-toolbar color="success" *ngIf="materiaPrima.descricao && materiaPrima.nome">
                 <ion-button expand="full" fill="clear" color="light" (click)="salvar();">
-                  <ion-icon name="save" slot="start"></ion-icon>
-                  Adicionar
+                    <ion-icon name="save" slot="start"></ion-icon>
+                    Adicionar
                 </ion-button>
             </ion-toolbar>
         </ion-col>
         <ion-col size="6">
             <ion-toolbar>
-                <ion-button expand="full" fill="clear" color="danger" routerLink="/menu/materia-prima" routerDirection="root" routerLinkActive="active">
-                    <ion-icon name="trash" slot="start" routerLink="/menu/materia-prima" routerDirection="root" routerLinkActive="active"></ion-icon>
+                <ion-button expand="full" fill="clear" color="danger" routerLink="/menu/materia-prima"
+                    routerDirection="root" routerLinkActive="active">
+                    <ion-icon name="trash" slot="start" routerLink="/menu/materia-prima" routerDirection="root"
+                        routerLinkActive="active"></ion-icon>
                     Cancelar
                 </ion-button>
             </ion-toolbar>
         </ion-col>
-    </ion-row>      
+    </ion-row>
 </ion-footer>

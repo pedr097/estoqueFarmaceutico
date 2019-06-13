@@ -5,51 +5,55 @@
 </ion-header>
 
 <ion-content>
-    <ion-list>
+  <ion-list>
 
-        <ion-item>
-            <ion-label>Nome:</ion-label>
-            <ion-input expand="block" [(ngModel)]="produto.nome"></ion-input>
-        </ion-item>
+    <ion-item>
+      <ion-label>Nome:</ion-label>
+      <ion-input expand="block" [(ngModel)]="produto.nome"></ion-input>
+    </ion-item>
 
-        <ion-item>
-            <ion-label>Descrição:</ion-label>
-            <ion-input expand="block" [(ngModel)]="produto.descricao"></ion-input>
-        </ion-item>
+    <ion-item>
+      <ion-label>Descrição:</ion-label>
+      <ion-input expand="block" [(ngModel)]="produto.descricao"></ion-input>
+    </ion-item>
 
-        <ion-item>
-            <ion-label>Data Vencimento</ion-label>
-            <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="produto.data"></ion-datetime>
-          </ion-item>
+    <ion-item>
+      <ion-label>Data Vencimento</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="produto.data"></ion-datetime>
+    </ion-item>
 
-        <ion-item>
-          <ion-label>Materias Primas</ion-label>
-          <ion-select multiple="true" [(ngModel)]="produto.materiasprimas">
-            <ion-select-option *ngFor="let item of (materiaprimaList | async) " [value]="item" selected>{{item.nome}}</ion-select-option>
-          </ion-select>
-        </ion-item>
-        
-    </ion-list>
+    <ion-item>
+      <ion-label>Materias Primas</ion-label>
+      <ion-select multiple="true" [(ngModel)]="produto.materiasprimas">
+        <ion-select-option *ngFor="let item of (materiaprimaList | async) " [value]="item" selected>{{item.nome}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+  </ion-list>
 </ion-content>
 
 
 <ion-footer>
-    <ion-row no-padding text-center>
-        <ion-col size="6">
-            <ion-toolbar color="success" *ngIf="produto.descricao && produto.nome && produto.materiasprimas.length > 0">
-                <ion-button expand="full" fill="clear" color="light" (click)="salvar();">
-                  <ion-icon name="save" slot="start"></ion-icon>
-                  Adicionar
-                </ion-button>
-            </ion-toolbar>
-        </ion-col>
-        <ion-col size="6">
-            <ion-toolbar>
-                <ion-button expand="full" fill="clear" color="danger" routerLink="/menu/produto" routerDirection="root" routerLinkActive="active">
-                    <ion-icon name="trash" slot="start" routerLink="/menu/produto" routerDirection="root" routerLinkActive="active"></ion-icon>
-                    Cancelar
-                </ion-button>
-            </ion-toolbar>
-        </ion-col>
-    </ion-row>      
+  <ion-row no-padding text-center>
+    <ion-col size="6">
+      <ion-toolbar color="success"
+        *ngIf="produto.descricao && produto.nome && produto.data && produto.materiasprimas.length > 0">
+        <ion-button expand="full" fill="clear" color="light" (click)="salvar();">
+          <ion-icon name="save" slot="start"></ion-icon>
+          Adicionar
+        </ion-button>
+      </ion-toolbar>
+    </ion-col>
+    <ion-col size="6">
+      <ion-toolbar>
+        <ion-button expand="full" fill="clear" color="danger" routerLink="/menu/produto" routerDirection="root"
+          routerLinkActive="active">
+          <ion-icon name="trash" slot="start" routerLink="/menu/produto" routerDirection="root"
+            routerLinkActive="active"></ion-icon>
+          Cancelar
+        </ion-button>
+      </ion-toolbar>
+    </ion-col>
+  </ion-row>
 </ion-footer>
