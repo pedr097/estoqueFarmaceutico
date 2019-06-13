@@ -8,7 +8,7 @@
 </ion-header>
  
 <ion-content padding>
-  <tr *ngFor="let item of ( produtoList | async)">
+  <tr *ngFor="let item of ( produtoList | async) | orderBy:'nome'">
       <ion-card>
           <ion-card-header>
             <ion-card-subtitle><b>Nome:</b>  {{item.nome}} </ion-card-subtitle>

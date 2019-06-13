@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Query } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Produto } from '../interface/produto';
 import { AngularFirestoreCollection, AngularFirestore, DocumentReference } from '@angular/fire/firestore';
@@ -24,6 +24,7 @@ export class ProdutoService {
             return { id, ...data};
           })
         })
+        
       )
   }
 
