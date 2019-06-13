@@ -19,4 +19,8 @@ export class MateriaPrimaPage implements OnInit {
   ngOnInit() {
   }
 
+  deleteMateriaPrima(id: string){
+    this.materiaService.deleteMateriaPrima(id);
+  }
+
 }

@@ -9,14 +9,10 @@
  
 <ion-content padding>
   
-      
-      
-      
-
       <ion-card *ngFor="let item of ( produtoList | async)">
           <ion-item>
             <ion-label> {{item.nome}}</ion-label> 
-            <ion-button slot="end"><ion-icon ios="ios-trash" md="md-trash"></ion-icon></ion-button>
+            <ion-button slot="end" (click)="deleteProduto(item.id)"><ion-icon ios="ios-trash" md="md-trash"></ion-icon></ion-button>
           </ion-item>
 
           <ion-item>     

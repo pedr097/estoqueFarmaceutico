@@ -35,4 +35,8 @@ export class ProdutoService {
     return this.produtoCollection.add(produto);
   }
 
+  deleteProduto(id: string): Promise<void> {
+    return this.produtoCollection.doc(id).delete();
+  }
+
 }
