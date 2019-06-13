@@ -19,4 +19,8 @@ export class ProdutoPage implements OnInit {
   ngOnInit() {
   }
 
+  deleteProduto(id: string){
+    this.produtoService.deleteProduto(id);
+  }
+
 }
