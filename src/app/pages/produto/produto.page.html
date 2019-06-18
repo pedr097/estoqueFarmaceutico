@@ -8,8 +8,8 @@
 </ion-header>
 
 <ion-content padding>
-<tr *ngFor="let item of ( produtoList | async)">
-  <ion-card  (click)="exibeOpcoes(item.id)">
+
+  <ion-card *ngFor="let item of ( produtoList | async)" (click)="exibeOpcoes(item.id)">
     <ion-item>
       <ion-label> {{item.nome}}</ion-label>
       <ion-button slot="end" (click)="deleteProduto(item.id)">
@@ -30,7 +30,7 @@
     </ion-item>
 
   </ion-card>
-</tr>
+
 </ion-content>
 
 <ion-footer>

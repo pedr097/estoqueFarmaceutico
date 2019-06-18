@@ -16,7 +16,7 @@
     <ion-label style="font-size: 12px; text-align: center">Lista dos Produtos mais próximos de vencer</ion-label>
   </ion-item>
 
-  <ion-card *ngFor="let item of ( produtoList )">
+  <ion-card *ngFor="let item of ( produtoList | async)">
     <ion-item>
       <ion-label> {{item.nome}}</ion-label>
     </ion-item>

@@ -4,6 +4,7 @@ import { Produto } from 'src/app/interface/produto';
 import { ProdutoService } from 'src/app/services/produto.service';
 import { Router } from '@angular/router';
 import { Platform } from '@ionic/angular';
+import { Produto3Service } from 'src/app/services/produto3.service';
 
 @Component({
   selector: 'app-leitura',
@@ -17,7 +18,7 @@ export class LeituraPage implements OnInit {
   produto: Produto;
 
   constructor(private barcodeScanner: BarcodeScanner,
-    private produtoService: ProdutoService,
+    private produtoService: Produto3Service,
     private router: Router,
     private platform: Platform) { 
 
